@@ -1,25 +1,20 @@
 <?php
-    require("../Conexion/conexion.php");
+require("../Conexion/conexion.php");
 
-    $email_usuario = $_POST['email_usuario'];
-    $nombre_usuario = $_POST['nombre_usuario'];
-    $clave_usuario = password_hash($_POST['clave_usuario'], PASSWORD_DEFAULT);
-    $rol_usuario = $_POST['rol_usuario'];
+$email_usuario = $_POST['email_usuario'];
+$password_usuario = password_hash($_POST['password_usuario'], PASSWORD_DEFAULT);
+$rol_usuario = $_POST['rol_usuario'];
+//usar indice del select
+if ($rol_usuario == "admin") {
+    $idRol = 1;
+} else if ($rol_usuario == "vendedor") {
+    $idRol = 2;
+}
 
-    $res = $conexion->prepare("INSERT INTO usuarios (email_usuario, nombre_usuario, clave_usuario, rol_usuario) VALUES (?,?,?,?)");
-    $res->execute([$email_usuario,$nombre_usuario,$clave_usuario,$rol_usuario]);
+$res1 = $conexion->prepare("INSERT INTO usuario (email_usuario, password_usuario) VALUES (?,?)");
+$res1->execute([$email_usuario, $password_usuario]);
+$res2 = $conexion->prepare("INSERT INTO usuariorol (email_usuario, idRol) VALUES (?,?)");
+$res2->execute([$email_usuario, $idRol]);
+
+header("Location:mostrar_usuarios.php");
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Style/estilos.css">
-    <title>Usuario Cargado</title>
-</head>
-<body>
-    <h2>Usuario cargado correctamente</h2>
-    <button><a href="pag_admin.php">Volver Atras</button>
-</body>
-</html>

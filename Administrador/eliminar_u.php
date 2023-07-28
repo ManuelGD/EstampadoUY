@@ -1,11 +1,13 @@
 <?php 
     require("../Conexion/conexion.php");
 
-    $id = $_GET['id'];
+    $email_usuario = $_GET['email_usuario'];
 
-    $res = $conexion->prepare("DELETE FROM usuarios WHERE id_usuario=?");
-    $res->execute([$id]);
-    echo "<link rel=stylesheet href=../style/estilos.css>";
-    echo "<h1>Usuario Eliminado</h1>";
-    echo "<button><a href=pag_admin.php>Volver Atras</button>"
+    $res = $conexion->prepare("DELETE FROM usuario WHERE email_usuario=?");
+    $res->execute([$email_usuario]);
+
+    $res1 = $conexion->prepare("DELETE FROM usuariorol WHERE email_usuario=?");
+    $res1->execute([$email_usuario]);
+
+    header("Location:mostrar_usuarios.php");
 ?>

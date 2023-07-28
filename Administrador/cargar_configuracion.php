@@ -1,17 +1,18 @@
 <?php
     require("../Conexion/conexion.php");
 
+    $idConfiguracion = '1';
     $logo_empresa = $_POST['logo_empresa'];
     $rubro_empresa = $_POST['rubro_empresa'];
     $nombre_empresa = $_POST['nombre_empresa'];
-    $barrio_empresa = $_POST['barrio_empresa'];
-    $calle_empresa = $_POST['calle_empresa'];
-    $manzana_empresa = $_POST['manzana_empresa'];
-    $solar_empresa = $_POST['solar_empresa'];
-    $comentario_empresa = $_POST['comentario_empresa'];
+    $barrio = $_POST['barrio'];
+    $calle = $_POST['calle'];
+    $manzana = $_POST['manzana'];
+    $solar = $_POST['solar'];
+    $comentario_venta = $_POST['comentario_venta'];
     $contacto_empresa = $_POST['contacto_empresa'];
 
-    $res = $conexion->prepare("INSERT INTO configuracion (logo_empresa, rubro_empresa, nombre_empresa, barrio_empresa, calle_empresa, manzana_empresa, solar_empresa, comentario_empresa, contacto_empresa) VALUES (?,?,?,?,?,?,?,?,?)");
-    $res->execute([$logo_empresa,$rubro_empresa,$nombre_empresa,$barrio_empresa,$calle_empresa,$manzana_empresa,$solar_empresa,$comentario_empresa,$contacto_empresa]);
+    $res = $conexion->prepare("UPDATE configuracion SET logo_empresa=?, rubro_empresa=?, nombre_empresa=?, barrio=?, calle=?, manzana=?, solar=?, comentario_venta=?, contacto_empresa=? WHERE idConfiguracion=?");
+    $res->execute([$logo_empresa,$rubro_empresa,$nombre_empresa,$barrio,$calle,$manzana,$solar,$comentario_venta,$contacto_empresa,$idConfiguracion]);
     header("Location:pag_admin.php");
 ?>

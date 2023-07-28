@@ -1,52 +1,350 @@
-body{
-    font-family: Tahoma;
-    width: 100%;
-    height: 100vh;
-    margin: 0;
-    background-image: linear-gradient(to bottom, #ffffff, #000000);
-    color: black;
-    font-size: 16px;
+*{
+  box-sizing: border-box;
 }
 
-h1{
-    font-size: 32px;
+html {
+  height: 100vh;
+  min-height: 100%;
+  position: relative;
+}
+
+.bodymenus{
+    font-family: Helvetica;
+    width: 100vw;
+    margin: 0;
+    background-image: linear-gradient(to bottom, #ffffff, #c9c9c9fe);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    min-height: 100%;
+    color: rgba(27, 27, 27, 0.908);
+    font-size: 16px;
+    display: flex;
+    flex-direction: column; 
+}
+
+.bodylogin{
+  font-family: Helvetica;
+  background: #0a0a0a;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+  h1 {
+    font-size: 40px;
     margin: 10px auto;
     text-align: center;
-}
-
-.form_login{
-    background-color: #f2f2f2;
-    border: 2px black solid;
-    border-radius: 5px;
-    max-width: 400px;
-    min-width: 300px;
+  }
+  
+  .form_login {
+    background-color: #efeeeefc;
+    border: 2px rgb(223, 219, 219) solid;
+    border-radius: 20px;
+    max-width: 800px;
+    min-width: 600px;
     margin: 10% auto;
-    padding: 2em;
-}
-
-.container {
+    padding: 100px;
+    box-shadow: 10px 10px 160px -79px rgba(255,255,255,0.55);
+  }
+  
+  .container {
     text-align: center;
-}
+  }
 
-label{
+  label {
     display: block;
     margin: 0.5rem 0;
+  }
+  
+  .input_login {
+    border-radius: 10px;
+    margin: 10px auto;
+    width: 94%;
+    height: 45px;
+    min-height: 2em;
+    padding: 0 30px;
+    margin-left: 1%;
+    border: 2px rgb(232, 232, 232) solid;
+  }
+  
+  .submit {
+    font-size: 17px;
+    background-image: linear-gradient(to bottom, #ef0000, #ad1212fe);
+    color: #f3f3f3;
+    border: 2px rgb(232, 232, 232) solid;
+    border-radius: 15px;
+    margin: 20px 0 0 0;
+    width: 85%;
+    min-height: 3em;
+  }
 
-}
+  .submit:hover{
+    cursor: pointer;
+  }
+  
+  header{
+    background: #000000;
+    padding: 1rem;
+    width: 100%;
+  }
 
-input{
-    border-radius: 0.25rem;
+  .menu{  
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .menu i{
+    font-size: 1.5rem;
+    color: white;
+  }
+
+  .menu .MBotones a{
+    text-decoration: none;
+    color: white;
+    padding: 20px;
+    display: inline-block;
+  }
+
+  .menu .MBotones a:hover{
+    background: #FF0000;
+  }
+
+  footer{
+    margin-top: auto;
+    bottom:0px;
+    width: 100%;
+    background-color: #000000;
+    padding: 0.75em;
+  }
+
+  .foot{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  footer p{
+    color: white;
+  }
+
+  .copy{
+    text-align: right;
+  }
+
+  .nombre_rol{
+    font-size: 25px;
+  }
+
+  .container_config{
+    width: 50%;
+    margin: auto;
+    border: 3px rgb(223, 219, 219) solid;
+    border-radius: 20px;
+    box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.37);
+    padding: 0.75rem;
+  }
+
+  .config img{
+    border-radius: 50%;
+  }
+
+  .config{
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+
+  .form_agregar_usuario{
+    text-align: center;
+    margin: auto;
+    display: block;
+    max-width: 700px;
+    border: 2px rgb(223, 219, 219) solid;
+    border-radius: 20px;
+    box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.37);
+    padding: 5rem;
+  }
+  
+  .form_agregar_usuario input{
+    border-radius: 10px;
+    margin: 10px auto;
+    width: 60%;
+    height: 45px;
+    min-height: 2em;
+    padding: 0 20px;
+    margin-left: 1%;
+    border: 2px rgb(232, 232, 232) solid;
+  }
+
+  .form_agregar_usuario select{
+    width: 60%;
+    height: 30px;
+    border-radius: 10px;
+    margin: 10px auto;
+  }
+
+  .sbmt_form_au{
+    background: #0f0f0f;
+    color: white;
+  }
+
+  .sbmt_form_au :hover{
+    cursor: pointer;
+  }
+
+  .form_modificar_config{
+    max-width: 50%;
+    margin: auto;
+    padding: 1em 2em;
+    border-radius: 20px;
+    border: 2px rgb(223, 219, 219) solid;
+    box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.37);
+  }
+
+  .inputsconfig{
+    padding-left: 50px;
+  }
+
+  .form_modificar_config i{
+    font-size: 50px;
+    margin-left: 50px;
+  }
+
+  .form_modificar_config label{
+    margin-top: 20px;
+    margin-left: 100px;
+    font-size: 20px;
+  }
+
+  .form_modificar_config input{
+    border-radius: 10px;
+    margin-top: 10px;
+    width: 43%;
+    height: 45px;
+    min-height: 2em;
+    padding: 0 20px;
+    border: 2px rgb(232, 232, 232) solid;
+  }
+
+  .form_modificar_config input[type="submit"]{
+    background: #0f0f0f;
+    color: white;
+    margin: 30px 50px;
+    width: 80%;
+  }
+
+  .usuarios{
+
+    /* Cambio  */
+    width: 100%;
+    display: flex; 
+    justify-content: space-between;
+    align-items: center ;
+
+    /* Cambio  */
+
+
+    margin: 10px auto;
+    padding: 0 10px;
+    text-align: center;
+    border: 3px rgb(223, 219, 219) solid;
+    border-radius: 20px;
+    box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.37);
+  }
+
+/* Cambio */
+  .ancho{
+    width: 16,5%;
+  }
+  /* Cambio */
+  
+  .btn_operaciones{
+    padding: 10px;
+    margin-right: 5px;
+    border-radius: 20px;
+    background: #000000;
+    border: 3px rgb(223, 219, 219) solid;
+  }
+  
+  .usuarios .btn_operaciones a{
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 20px;
+  }
+
+  .texto_u{
+    margin: 0;
+    font-size: 25px;
+    color: #000000;
+  }
+
+  .form_agregar_producto{
+    text-align: center;
+    margin: auto;
+    display: block;
+    max-width: 700px;
+    border: 2px rgb(223, 219, 219) solid;
+    border-radius: 20px;
+    box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.37);
+    padding: 5rem;
+  }
+  
+  .form_agregar_producto input{
+    border-radius: 10px;
     margin: 10px auto;
     width: 70%;
+    height: 45px;
     min-height: 2em;
-}
+    padding: 0 20px;
+    margin-left: 1%;
+    border: 2px rgb(232, 232, 232) solid;
+  }
 
-input[type="submit"] {
-    background-color: #f62500;
-    border: #f62500 solid;
-    color: #f3f3f3;
-    border-radius: 0.25rem;
-    margin: 10px 0 0 0;
+  .form_agregar_producto i{
+    font-size: 50px;
+  }
+
+  .form_agregar_producto label{
+    font-size: 20px;
+  }
+
+  .sbmt_form_ap{
     width: 80%;
-    min-height: 2em;
-}
+    background: #0f0f0f;
+    color: white;
+  }
+
+  .sbmt_form_ap :hover{
+    cursor: pointer;
+  }
+
+  .container_productos{
+    width: 50%;
+    margin: 10px auto;
+    padding-bottom: 10px;
+    text-align: center;
+    border: 3px rgb(223, 219, 219) solid;
+    border-radius: 20px;
+    box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.37);
+  }
+
+  .container_productos button{
+    width: 30%;
+    padding: 10px;
+    border-radius: 20px;
+    background: #0f0f0f;
+    color: white;
+    margin-right: 5px;
+    cursor: pointer;
+  }
+
+  .container_productos button a{
+    text-decoration: none;
+    color: #ffffff;
+  }
+
+
+  .productos{
+    margin: 10px auto;
+  }
