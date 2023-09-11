@@ -1,0 +1,369 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;    
+    justify-content: center;
+
+}
+
+header{
+    background-color: #000;
+}
+
+header h1{
+    padding: 0px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 50px;
+    color: #fff;
+    text-align: center;
+}
+
+header .botones-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+}
+
+header .botones-container button{
+    margin-right: 200px;
+    margin-left: 200px;
+}
+
+
+.barra_de_navegacion{
+    background-color: #000000;
+    color: white;
+    padding: 5px;
+   
+}
+.carro{
+    background-color: #000000;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size:2rem;
+}
+.lupa{
+    background-color: #000000;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size:2rem;
+}
+
+#botones_barra {
+    list-style: none;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+#botones_barra li {
+    margin: 0 15px;
+}
+
+#botones_barra li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+#botones_barra li a:hover {
+    text-decoration: underline;
+}
+
+
+.promo-bar {
+    background-color: #ff0000;
+    color: white;
+    text-align: center;
+    padding: 5px;
+}
+
+.imagen_banner{  
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+
+.tarjetas_productos {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2.5rem;
+    justify-content: center;
+    margin: 2.5rem auto ;
+    
+}
+
+.precios p{
+    display: inline-block;
+}
+
+.precios .precio_antiguo{
+    font-size: 11px;
+    margin: 5px 0;
+    color: #333333;
+    text-decoration: line-through;
+}
+
+.tarjeta {
+    border-radius: 25px;
+    padding: 20px;
+    width: calc(25% - 20px);
+    margin-bottom: 20px;
+    box-shadow: 0px 2px 5px rgba(139, 139, 139, 0.856);
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 20px;
+    box-sizing: border-box;
+    position: relative;
+    
+}
+
+.tarjeta:last-child {
+    margin-right: 0;
+}
+
+.promocion {
+    background-color: #e40a0a;
+    color: white;
+    padding: 3px 6px;
+    border-radius: 5px;
+    position: absolute;
+    top: 0.7rem;
+    left: 0.8rem;
+}
+
+.tarjeta img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+}
+
+.tarjeta h3 {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.tarjeta p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.añadir_al_carro{
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 10px 35px;
+    cursor: pointer;
+    margin-right: 5px;
+    border: 2px solid #c9c9c9;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.vermas{
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 10px 35px;
+    cursor: pointer;
+    border: 2px solid #c9c9c9;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-top: 2%;    
+}
+
+
+.añadir_al_carro:hover{
+    background-color: #010101;
+    opacity: 0.9;
+    color: #fff;
+}
+
+.boton-contenedor {
+    text-align: center;
+}
+
+.vermas:hover{
+    background-color: #010101;
+    opacity: 0.9;
+    color: #fff;
+}
+
+footer {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.contenido_footer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.company-name {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.informacion_contacto {
+    text-align: right;
+    padding: 0 20px;
+}
+.tituloheader {
+    color: #fff;
+    text-align: center;
+}
+
+
+.image-carousel {  
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+#h2_masproductos {
+    text-align: center;
+    font-size: 25px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-top: 5rem;
+}
+
+.barra_promocion{
+    background-color: #ff0000;
+    padding: 1px;
+    color: #fff;
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.barra_info{
+    color: #fff;
+    padding: 1px;
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/*PAGINA CONTACTO*/
+.headercontacto{
+    background: #000000;
+
+}
+.h1contacto{
+   text-align: center;
+   margin-top: 0%;
+   padding: 2.5rem;
+
+  
+}
+.barra_de_navegacion_con{
+    background-color: #000000;
+    color: white;
+    padding: 5px;
+   margin-top: -2rem;
+}
+.numerotel{
+
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 30px;
+    text-align: left;
+    color: #fff;
+}
+.bodycontacto{  
+    
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    
+
+
+}
+
+.contenedor1{
+    margin-top: 2rem;
+ margin-left: auto;
+ margin-right: auto;
+   padding: 250px 200px;
+    border-radius: 1px;
+    background-color: #000000;
+    box-shadow: 0px 2px 5px rgba(139, 139, 139, 0.856);
+    width: 50%;
+    border: #000;
+    border-radius: 50px;
+
+
+}
+
+.sobrenosotros{
+    justify-content: left;
+      margin-top: -28%;
+      margin-left: -6rem;
+        font-size: 30px;
+     color: #fff;
+}
+.direccion{
+      font-size: 30px;
+      color: #fff;
+
+}
+.info{
+    color: #fff;
+}
+
+/*carrito*/
+.tarjetacarritoresumen{
+  
+    border-radius: 25px;
+    padding: 200px;
+    width: calc(25% - 20px);
+    margin-bottom: 20px;
+    box-shadow: 0px 2px 5px rgba(139, 139, 139, 0.856);
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 10%;
+    margin-top: 1.5%;
+    box-sizing: border-box;
+    position: relative;
+
+    
+}
+.tarjetacarrito{
+    
+    border-radius: 25px;
+    padding: 150px;
+    width: calc(55% - 20px);
+    margin-bottom: 20px;
+    box-shadow: 0px 2px 5px rgba(139, 139, 139, 0.856);
+    display: inline-block;
+    vertical-align: top;
+    margin: 20px 20px 20px;
+    box-sizing: border-box;
+    position: relative;
+  
+}
+
+#btn-paginas{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+#btn-paginas button{
+    padding: 10px;
+    border: solid black;
+    border-radius: 5px;
+    margin-right: 5px;
+}

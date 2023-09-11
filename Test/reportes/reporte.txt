@@ -1,0 +1,7 @@
+test
+ [x] Sumar with data set "data set 1"
+ [x] Sumar with data set "data set 2"
+ [x] Sumar with data set "data set 3"
+ [ ] Sumar with data set "data set 4"
+ [x] Sumar with data set "data set 5"
+
