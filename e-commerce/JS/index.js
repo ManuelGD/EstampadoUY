@@ -3,12 +3,12 @@ const divContenido = document.getElementById("prods");
 
 //Cargar Productos Promocionados
 fetch("../Backoffice/API/productos_promo.php")
-    .then(response => response.json())
-    .then(data => {
-        const divContenido = document.getElementById("prods_prom")
-        var contenido = '<div class="tarjetas_productos"> '
-        for (let i = 0; i < data.length; i++) {
-            contenido += `
+  .then((response) => response.json())
+  .then((data) => {
+    const divContenido = document.getElementById("prods_prom");
+    var contenido = '<div class="tarjetas_productos"> ';
+    for (let i = 0; i < data.length; i++) {
+      contenido += `
              
                     <div class="tarjeta">
                         <div class="fyp">
@@ -26,87 +26,93 @@ fetch("../Backoffice/API/productos_promo.php")
                         </div>
                     </div>
   
-        `
-        
-        }
-        contenido += ` </div> `
-        divContenido.innerHTML = contenido
-    })
-    .catch(error => {
-        console.error("Error: ", error)
-    });
+        `;
+    }
+    contenido += ` </div> `;
+    divContenido.innerHTML = contenido;
+  })
+  .catch((error) => {
+    console.error("Error: ", error);
+  });
 
 //Funcion que genera botones para el paginado
 // function cargarBotones(){
-divBtnPaginas.innerHTML = `<button>1</button>`
+function cargarBotones() {
+  fetch("../Backoffice/API/cantidad_productos.php")
+    .then((response) => response.json())
+    .then((data) => {
+      let contenido = "";
+      const ppp = 8;
 
- fetch("../Backoffice/API/cantidad_productos.php")
-     .then(response => response.json())
-     .then(data => {
-         let contenido = '';
-         const ppp = 8;
+      paginas = data[0] / ppp;
+      if (data[0] % ppp !== 0) {
+        paginas++;
+      }
 
-         paginas = data[0] / ppp;
-         if(data[0] % ppp !== 0){
-             paginas++;
-         }
-         
-         for(let i = 1; i < paginas; i++){
-             contenido += `
+      for (let i = 1; i < paginas; i++) {
+        contenido += `
                  <button>${i}</button>
-                 `
-         }
+                 `;
+      }
 
-         divBtnPaginas.innerHTML = contenido;
-     })
-     .catch(error => {
-         console.error("Error: ",error);
-     });
-    
-//}
+      divBtnPaginas.innerHTML = contenido;
+    })
+    .catch((error) => {
+      console.error("Error: ", error);
+    });
+}
 
 //Cargar pagina
-function cargarPagina(numPagina){
-    fetch(`../Backoffice/API/productos_pagina.php?p=${numPagina}`)
-        .then(response => response.json())
-        .then(data => {
-            let contenido = '<div class="tarjetas_productos"> '
-            for (let i = 0; i < data.length; i++) {
-                contenido += `
+function cargarPagina(numPagina) {
+  fetch(`../Backoffice/API/productos_pagina.php?p=${numPagina}`)
+    .then((response) => response.json())
+    .then((data) => {
+      let contenido = '<div class="tarjetas_productos"> ';
+      for (let i = 0; i < data.length; i++) {
+        contenido += `
                  
                         <div class="tarjeta">
                             <div class="fyp">
-                                <img src="../Backoffice/imagenes/${data[i].imagen_producto}">
+                                <img src="../Backoffice/imagenes/${data[i].imagen_producto}" width="250px">
                             </div>
                             <h3>${data[i].nombre_producto}</h3>
                             <div class="precios">
                                 <p>$${data[i].precio_producto}</p>
                             </div>
                             <div class="boton-contenedor">
-                                <button class="añadir_al_carro">Agregar al Carrito</button>
+                                <button id="${data[i].idProducto}" class="añadir_al_carro">Agregar al Carrito</button>
                                 <button class="vermas">Ver mas</button>
                             </div>
                         </div>
       
-            `
-            
-            }
-            contenido += ` </div> `
-            divContenido.innerHTML = contenido
-        })
-        .catch(error => {
-            console.error("Error:", error);
-        });
-    }    
+            `;
+      }
+      contenido += ` </div> `;
+      divContenido.innerHTML = contenido;
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+}
 
- 
 //Click en algun boton del paginado
-divBtnPaginas.addEventListener("click", function(event) {
-    if(event.target.tagName === "BUTTON"){
-        cargarPagina(event.target.textContent)
-        console.log(event.target.textContent)
-    }
+divBtnPaginas.addEventListener("click", function (event) {
+  if (event.target.tagName === "BUTTON") {
+    cargarPagina(event.target.textContent);
+  }
 });
 
 cargarPagina(1);
 cargarBotones();
+
+//Click en agregar al carrito
+divContenido.addEventListener("click", function (event) {
+  if (event.target.tagName === "BUTTON") {
+    let carrito = localStorage.getItem("id");
+
+    if (carrito) {
+      carrito += event.target.id + ",";
+      localStorage.setItem("id", carrito);
+    }
+  }
+});
