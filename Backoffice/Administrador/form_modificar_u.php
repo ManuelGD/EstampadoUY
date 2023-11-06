@@ -19,8 +19,7 @@
     ?>
     <form class="form_agregar_usuario" action="modificar_u.php" method="post">
     <h1>Modificar Usuario</h1>
-        <input type="hidden" name="email_actual" value="<?php echo $email_usuario ?>">
-        <input type="email" name="email_usuario" placeholder="Email" value="<?php echo $email_usuario ?>" required>
+        <input type="text" name="email" value="<?php echo $email_usuario ?>"disabled>
         <input type="password" name="password_usuario" placeholder="Nueva contraseña..." pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{10,15}$" required>
 
         <select name="rol_usuario" required>

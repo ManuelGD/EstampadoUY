@@ -18,14 +18,26 @@ session_start();
     <?php
     include("../menu_vendedor.html");
     ?>
-    <h1 id=titulo_promocionados>Productos Promocionados</h1>
+    <h1>Productos Promocionados</h1>
     <?php
     $res = $conexion->query("SELECT * FROM producto JOIN promocion ON producto.idProducto = promocion.idProducto WHERE fecha_inicio <= CURRENT_DATE AND fecha_fin >= CURRENT_DATE");
     echo "<div class=tabla>";
-    echo "<table border='1'>";
-    echo "<thead><th>ID</th><th>Nombre</th><th>Precio</th><th>Precio de Promocion</th><th>Fecha Inicio</th><th>Fecha Fin</th><th>Ruta de Imagen</th></thead>";
+    echo "<table>";
+    echo "<thead><th>ID</th><th>Nombre</th><th>Precio</th><th>Precio de Promocion</th><th>Fecha Inicio</th><th>Fecha Fin</th><th>Ruta de Imagen</th><th></th><th></th><th></th></thead>";
     while ($reg = $res->fetch()) {
-    echo "<tr><td>$reg[idProducto]</td><td>$reg[nombre_producto]</td><td>$reg[precio_producto]</td><td>$reg[precio_promocion]</td><td>$reg[fecha_inicio]</td><td>$reg[fecha_fin]</td><td>$reg[imagen_producto]</td><td><a href=eliminar_prod_promo.php?idProducto=$reg[idProducto]>Eliminar</a></td></tr>";
+        echo "
+            <tr>
+                <td>$reg[idProducto]</td>
+                <td>$reg[nombre_producto]</td>
+                <td>$reg[precio_producto]</td>
+                <td>$reg[precio_promocion]</td>
+                <td>$reg[fecha_inicio]</td>
+                <td>$reg[fecha_fin]</td>
+                <td>$reg[imagen_producto]</td>
+                <td><a href=eliminar_prod_promo.php?idProducto=$reg[idProducto]>
+                <i class='fa-solid fa-trash-can'></i></a></td>
+                <td></td>
+            </tr>";
     }
     echo "</table>";
     echo "</div>";
@@ -34,16 +46,25 @@ session_start();
     <?php
     $res = $conexion->query("SELECT * FROM producto WHERE idProducto NOT IN ( SELECT idProducto FROM promocion WHERE fecha_inicio <= CURRENT_DATE AND fecha_fin >= CURRENT_DATE )");
     echo "<div class=tabla>";
-    echo "<table border='1'>";
-    echo "<thead><th>ID</th><th>Nombre</th><th>Precio</th><th>Ruta de Imagen</th><th></th></thead>";
+    echo "<table>";
+    echo "<thead><th>ID</th><th>Nombre</th><th>Precio</th><th>Ruta de Imagen</th><th></th><th></th><th></th></thead>";
     while ($reg = $res->fetch()) {
-    echo "<tr><td>$reg[idProducto]</td><td>$reg[nombre_producto]</td><td>$reg[precio_producto]</td><td>$reg[imagen_producto]</td><td><a href=form_promocionar_p.php?idProducto=$reg[idProducto]>Promocionar</a><a href=form_modificar_p.php?idProducto=$reg[idProducto]>Modificar</a><a href=eliminar_p.php?idProducto=$reg[idProducto]>Eliminar</a></td></tr>";
+        echo "<tr>
+                <td>$reg[idProducto]</td>
+                <td>$reg[nombre_producto]</td>
+                <td>$reg[precio_producto]</td>
+                <td>$reg[imagen_producto]</td>
+                <td><a href=form_promocionar_p.php?idProducto=$reg[idProducto]><i class='fa-solid fa-tag'></i></a></td>
+                <td><a href=form_modificar_p.php?idProducto=$reg[idProducto]><i class='fa-solid fa-pen-to-square'></i></a></td>
+                <td><a href=eliminar_p.php?idProducto=$reg[idProducto]><i class='fa-solid fa-trash-can'></i></a></td>
+            </tr>";
     }
     echo "</table>";
     echo "</div>";
 
     include("../footer.html");
     ?>
+    <script src="../JS/backoffice.js"></script>
 </body>
 
 </html>

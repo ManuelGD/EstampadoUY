@@ -17,12 +17,10 @@
     require("../Conexion/conexion.php");
 
     $res = $conexion->query("SELECT * FROM usuariorol");
-    $res1 = $conexion->query("SELECT nombre_usuario, apellido_usuario FROM usuario");
-    $reg1 = $res1->fetch();
     echo "<h1>Usuarios</h1>";
     echo "<div class=tabla>";
-    echo "<table border='1'>";
-    echo "<thead><th>Email</th><th>Rol</th><th>Nombre</th><th>Apellido</th><th>Operaciones</th></thead>";
+    echo "<table>";
+    echo "<thead><th>Email</th><th>Rol</th><th></th><th></th></thead>";
     while ($reg = $res->fetch()) {
         if ($reg['idRol'] == '1') {
             $rol = 'Administrador';
@@ -32,9 +30,8 @@
         echo "<tr>
         <td>$reg[email_usuario]</td>
         <td>$rol</td>
-        <td>$reg1[nombre_usuario]</td>
-        <td>$reg1[apellido_usuario]</td>
-        <td><a href=form_modificar_u.php?email_usuario=$reg[email_usuario]&rol_usuario=$rol>Modificar</a><a href=eliminar_u.php?email_usuario=$reg[email_usuario]>Eliminar</a></td>
+        <td><a href=form_modificar_u.php?email_usuario=$reg[email_usuario]&rol_usuario=$rol><i class='fa-solid fa-pen-to-square'></i></a></td>
+        <td><a href=eliminar_u.php?email_usuario=$reg[email_usuario]><i class='fa-solid fa-trash-can'></i></a></td>
         </tr>";
     }
     echo "</table>";

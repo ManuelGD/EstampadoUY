@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-09-2023 a las 01:20:00
+-- Tiempo de generación: 30-09-2023 a las 22:22:39
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.2.0
 
@@ -144,8 +144,8 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`email_usuario`, `nombre_usuario`, `apellido_usuario`, `password_usuario`) VALUES
-('pacellobruno@gmail.com', '', '', '$2y$10$h4I5cTRzR5.YDb4FX/SjT.IA3UQuRg0KjSNEfiRahT1kzawE9.KNG'),
-('sebasanti2005@gmail.com', '', '', '$2y$10$NNE6mAwm2AL1t7RSoOLUqO9GLICtiCRf94e0XuJ6I5fvSWkmmOnsq');
+('pacellobruno@gmail.com', 'Bruno', 'Pacello', '$2y$10$M69clQ6O9asbMHjDH2LjU.O4xq.LwEGMYZn0u9AeH50WItKAgtEaW'),
+('santiseba2005@gmail.com', 'Sebastian', 'Santiago', '$2y$10$CZ4qgTGxp0OIzoeb8kix.ekWPPEfkv9nomX5iiWRcFBRWQaDng46e');
 
 -- --------------------------------------------------------
 
@@ -164,7 +164,7 @@ CREATE TABLE `usuariorol` (
 
 INSERT INTO `usuariorol` (`email_usuario`, `idRol`) VALUES
 ('pacellobruno@gmail.com', '2'),
-('sebasanti2005@gmail.com', '1');
+('santiseba2005@gmail.com', '1');
 
 --
 -- Índices para tablas volcadas

@@ -25,32 +25,26 @@
             </div>
             <div class="inputsconfig">
                 
-                <label for="nombre_empresa">Nombre de la Empresa</label>
                 <input type="text" name="nombre_empresa" placeholder="Nombre de la Empresa" value="<?php echo $reg['nombre_empresa'] ?>" required>
-                
-                <label for="rubro_empresa">Rubro</label>
+        
                 <input type="text" name="rubro_empresa" placeholder="Rubro" value="<?php echo $reg['rubro_empresa'] ?>" required>
-                
-                <label for="barrio">Barrio</label>
+           
                 <input type="text" name="barrio" placeholder="Barrio" value="<?php echo $reg['barrio'] ?>" required>
                 
-                <label for="calle">Calle</label>
                 <input type="text" name="calle" placeholder="Calle" value="<?php echo $reg['calle'] ?>" required>
                 
-                <label for="manzana">Manzana</label>
                 <input type="text" name="manzana" placeholder="Manzana" value="<?php echo $reg['manzana'] ?>" required>
                 
-                <label for="solar">Solar</label>
                 <input type="text" name="solar" placeholder="Solar" value="<?php echo $reg['solar'] ?>" required>
                 
-                <label for="comentario_venta">Moneda</label>
                 <input type="text" name="comentario_venta" placeholder="Moneda" value="<?php echo $reg['comentario_venta'] ?>" required>
+            
+                <input type="text" name="contacto_empresa" placeholder="Numero de Telefono" value="<?php echo $reg['contacto_empresa'] ?>" required>
                 
-                <label for="contacto_empresa">Numero de telefono</label>
-                <input type="tel" name="contacto_empresa" placeholder="Numero de Telefono" value="<?php echo $reg['contacto_empresa'] ?>" required>
-                
+                <input type="submit" value="Modificar Configuracion">
+            
             </div>
-            <input type="submit" value="Modificar Configuracion">
+
         </form>
     <?php
     include("../footer.html");

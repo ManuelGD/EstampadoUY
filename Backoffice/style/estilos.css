@@ -203,7 +203,7 @@ html {
   }
 
   .form_modificar_config{
-    max-width: 50%;
+    width: 60%;
     margin: auto;
     padding: 1em 2em;
     border-radius: 20px;
@@ -236,7 +236,7 @@ html {
   }
 
   .inputsconfig{
-    padding-left: 50px;
+    text-align: center;
   }
 
   .form_modificar_config i{
@@ -382,33 +382,43 @@ html {
   .productos{
     margin: 10px auto;
   }
-
-  #titulo_promocionados{
-    color: #ef0000;
-  }
-
   .tabla{
     width: 90%;
     margin: 20px auto;
   }
+th{
+  background-color: red;
+  color: white;
+}
+td{
+  padding: 5px 0;
+}
+tr:hover{
+  background-color: grey;
+  color: white;
+}
 
   .tabla table{
     width: 100%;
     text-align: center;
     font-size: 1.5rem;
     border-color: black;
+    border-collapse: collapse;
   }
-
+  
   .tabla table a{
-    margin: 2px;
+    margin-left:2rem;
     text-decoration: none;
     padding: 5px;
     background-color: black;
     color: white;
-    border: 1px solid black;
     border-radius: 10px;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 1.2rem;
+  } 
+  .tabla table a:hover{
+    color: #000000;
+    background-color: #f3f3f3;
   }
   
 

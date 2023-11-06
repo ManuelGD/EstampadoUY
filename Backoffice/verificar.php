@@ -24,7 +24,9 @@ if($reg1){
             header("Location:Vendedor/pag_vendedor.php");
         }
 
-    } else {
+    } else{
         header("Location:index.php");
     }
+}else {
+    header("Location:index.php");
 }
